@@ -28,12 +28,12 @@ public class gerarFigurinha {
         graphics.drawImage(imagemOriginal, 0, 0, null); //acrescenta a imagem original na novaimagem
         
         //configurar fonte
-        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 32); //fonte, italico/negrito, tamanho 
-        graphics.setColor(Color.YELLOW); //aplica no grafico
+        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 100); //fonte, italico/negrito, tamanho 
+        graphics.setColor(Color.RED); //aplica no grafico
         graphics.setFont(fonte); //aplica a var fonte
 
         //ESCREVER UMA FRASE NA NOVA IMAGEM
-        graphics.drawString("TOP 250",0, novaAltura-50); //o que é escrito, posiçãoX, posiçãoY
+        graphics.drawString("TOP 250", 200, novaAltura-50); //o que é escrito, posiçãoX, posiçãoY
         //ESCREVER A NOVA IMAGEM EM ARQUIVO
         ImageIO.write(novaImagem, "png", new File(nomeArquivo)); //escreve o arquivo png, caminho
     }
