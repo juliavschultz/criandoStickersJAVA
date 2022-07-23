@@ -29,18 +29,19 @@ public class App {
 
         //EXIBIR OS DADOS --GERAR FIGURINHAS--
         var geradora = new gerarFigurinha();
-        for (Map<String,String> filme : listaDeFilmes) {
+        for (int i=0; i<10; i++){
+            Map<String,String> filme = listaDeFilmes.get(i); 
 
-            String urlImagem = filme.get("image");
-            String titulo = filme.get("title");
+                String urlImagem = filme.get("image").replaceAll("(@+)(.*).jpg$", "$1.jpg");
+                String titulo = filme.get("title");
 
-            InputStream inputStream = new URL(urlImagem).openStream();
-            String nomeArquivo = titulo + ".png";
+                InputStream inputStream = new URL(urlImagem).openStream();
+                String nomeArquivo = "saida/" + titulo + ".png";
 
-            geradora.criar(inputStream, nomeArquivo);
+                geradora.criar(inputStream, nomeArquivo);
 
-            System.out.println(titulo);
-            System.out.println();
+                System.out.println(titulo);
+                System.out.println();
         }
     }    
 }
